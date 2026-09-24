@@ -1,0 +1,21 @@
+candidate_id,filename,approach,intended_status,seeded_defect,provenance,collected_on
+c01,candidates/c01_sort_sweep.py,sort then linear sweep with validation helpers,intended-correct,none,benchmark corpus,2026-09-24
+c02,candidates/c02_while_sweep.py,inline validation and while-index sweep after sorting,intended-correct,none,benchmark corpus,2026-09-24
+c03,candidates/c03_stack_merge.py,stack merge: pop and push extended ranges,intended-correct,none,benchmark corpus,2026-09-24
+c04,candidates/c04_recursive_fold.py,recursive fold over the sorted pair list,intended-correct,none,benchmark corpus,2026-09-24
+c05,candidates/c05_fixpoint_merge.py,fixpoint pairwise merging until no pair overlaps,intended-correct,none,benchmark corpus,2026-09-24
+c06,candidates/c06_union_find.py,union-find connected components over the overlap graph,intended-correct,none,benchmark corpus,2026-09-24
+c07,candidates/c07_event_sweep.py,event-point sweep with a coverage-depth counter,intended-correct,none,benchmark corpus,2026-09-24
+c08,candidates/c08_divide_conquer.py,divide and conquer with a sorted-list combine step,intended-correct,none,benchmark corpus,2026-09-24
+c09,candidates/c09_reduce_fold.py,functools.reduce fold over sorted pairs,intended-correct,none,benchmark corpus,2026-09-24
+c10,candidates/c10_functional.py,functional style with map and itemgetter,intended-correct,none,benchmark corpus,2026-09-24
+c11,candidates/c11_compact.py,compact single-pass sweep with minimal comments,intended-correct,none,benchmark corpus,2026-09-24
+c12,candidates/c12_class_based.py,small class owning validation and merging,intended-correct,none,benchmark corpus,2026-09-24
+c13,candidates/c13_strict_overlap.py,sort and sweep merging only strict overlaps,seeded-defect,merges only when next_start < current_end so touching ranges stay split,benchmark corpus,2026-09-24
+c14,candidates/c14_inplace_sort.py,validation then in-place sort of the caller list,seeded-defect,sorts the input list in place which mutates the caller's data,benchmark corpus,2026-09-24
+c15,candidates/c15_lists_not_tuples.py,sweep building result items as lists,seeded-defect,returns a list of [start end] lists instead of tuples,benchmark corpus,2026-09-24
+c16,candidates/c16_no_validation.py,happy-path sweep that trusts the caller,seeded-defect,no input validation at all so malformed input is accepted or crashes,benchmark corpus,2026-09-24
+c17,candidates/c17_ints_only.py,strict validation but integer endpoints only,seeded-defect,rejects float endpoints as invalid (over-strict validation),benchmark corpus,2026-09-24
+c18,candidates/c18_assumes_sorted.py,single left-to-right pass in input order,seeded-defect,assumes the input is already sorted and never sorts,benchmark corpus,2026-09-24
+c19,candidates/c19_sort_by_end.py,validation then sweep after sorting by interval end,seeded-defect,sorts by end only so some inputs merge in the wrong order,benchmark corpus,2026-09-24
+c20,candidates/c20_wrong_exception.py,full checks signalling problems with TypeError,seeded-defect,raises TypeError instead of ValueError for bad input,benchmark corpus,2026-09-24
