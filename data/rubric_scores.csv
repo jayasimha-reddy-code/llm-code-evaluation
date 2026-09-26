@@ -1,0 +1,21 @@
+candidate_id,correctness_30,edge_cases_20,validation_10,complexity_10,non_mutation_5,readability_10,typing_docs_10,restraint_5,scorer,scored_on,human_confirmed,notes
+c01,30,20,10,10,5,9,10,5,jayasimha-reddy-code,2026-09-26,true,reference-quality sweep; minor verbosity in error messages
+c02,30,20,10,10,5,7,7,4,jayasimha-reddy-code,2026-09-26,true,solid; dense inline validation loop; strict type() checks are unusual
+c03,30,20,10,10,5,9,8,5,jayasimha-reddy-code,2026-09-26,true,clean stack idea with a tidy _as_pair helper
+c04,30,20,10,6,5,8,9,5,jayasimha-reddy-code,2026-09-26,true,neat fold but list slicing makes it quadratic and recursion caps size
+c05,30,20,10,3,5,8,6,5,jayasimha-reddy-code,2026-09-26,true,correct but cubic pairwise merging; fine for tiny inputs only
+c06,30,20,10,5,5,7,7,5,jayasimha-reddy-code,2026-09-26,true,clear union-find idea; quadratic overlap graph and sentinel lists
+c07,30,20,10,10,5,8,7,5,jayasimha-reddy-code,2026-09-26,true,event sweep is elegant; the tie-break comment earns its keep
+c08,30,20,10,9,5,8,9,5,jayasimha-reddy-code,2026-09-26,true,careful combine step; recursive slicing adds overhead
+c09,30,20,10,10,5,8,9,5,jayasimha-reddy-code,2026-09-26,true,reduce fold reads well; consistent validation
+c10,30,20,10,10,5,6,5,4,jayasimha-reddy-code,2026-09-26,true,works but assigned lambda and dense boolean expression hurt
+c11,30,20,10,10,5,4,1,4,jayasimha-reddy-code,2026-09-26,true,correct and fast to read for experts; names like ps and out are cryptic
+c12,30,20,10,10,5,9,8,5,jayasimha-reddy-code,2026-09-26,true,nice separation of concerns; endpoint hint says float but returns int
+c13,18,8,10,10,5,8,9,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: touching ranges stay split (strict < merge test)
+c14,30,20,10,10,0,7,8,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: in-place sort mutates the caller's list
+c15,24,14,10,10,5,8,7,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: result items are lists not tuples
+c16,30,8,0,10,5,7,6,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: no validation; trusts the caller completely
+c17,24,12,5,10,5,8,9,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: floats rejected; otherwise careful
+c18,16,10,10,5,5,8,8,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: never sorts; wrong for unordered input
+c19,18,10,10,10,5,8,8,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: sorts by end; wrong merge order for some inputs
+c20,30,12,2,10,5,8,7,5,jayasimha-reddy-code,2026-09-26,true,seeded defect: TypeError instead of ValueError; checks otherwise thorough
