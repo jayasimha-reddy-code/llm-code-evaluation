@@ -1,0 +1,7 @@
+failure_type,definition,observed_count,affected_candidates,example_failures
+wrong_result_value,"returned a result, but its value differs from the contract",18,c13;c18;c19,c13:pub-touching;c13:reg-unsorted-many;c13:reg-order-matters-a
+wrong_result_shape,returned items are not two-item tuples,32,c15,c15:pub-single;c15:pub-overlap;c15:pub-disjoint
+input_mutation,caller's input list or inner lists were modified,3,c14,c14:pub-no-mutation;c14:reg-no-mutation-order;c14:reg-no-mutation-nested
+missing_validation_error,invalid input accepted instead of raising ValueError,21,c16,c16:pub-invalid-reversed;c16:pub-invalid-nan;c16:reg-malformed-long
+unexpected_validation_error,valid input rejected with ValueError,5,c17,c17:pub-floats;c17:reg-neg-floats;c17:reg-mixed-int-float
+wrong_exception_type,invalid input raised an exception other than ValueError,31,c16;c20,c16:reg-malformed-short;c16:reg-malformed-empty-item;c16:reg-malformed-scalar-item

@@ -1,0 +1,161 @@
+candidate_id,criterion,max_points,score,evidence_rationale,review_type,human_confirmed
+c01,specification/correctness,30,30,"sweep semantics match contract: closed-range merge, sorted minimal tuples | observed: 0 of 59 cases fail",manual review,true
+c01,edge cases,20,20,empty/single/nested/duplicate/touching/float/negative inputs handled as specified | observed: 0 of 59 cases fail,manual review,true
+c01,input validation,10,10,"endpoint helper rejects bools, NaN/inf; ValueError on every invalid class; validates before merging | observed: 0 of 59 cases fail",manual review,true
+c01,complexity,10,10,comparison sort dominates: O(n log n),manual review,true
+c01,non-mutation,5,5,builds a fresh checked list of tuples; input never written | observed: 0 of 59 cases fail,manual review,true
+c01,readability,10,9,small helpers and linear sweep easy to follow; error strings are repetitive,manual review,true
+c01,type hints/docstrings,10,10,accurate int|float annotations; docstring documents args/returns/raises,manual review,true
+c01,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c02,specification/correctness,30,30,while-index sweep computes the same closed-range union as the contract | observed: 0 of 59 cases fail,manual review,true
+c02,edge cases,20,20,edge classes handled; ordered pairs copied before merging | observed: 0 of 59 cases fail,manual review,true
+c02,input validation,10,10,"inline checks reject bools, non-numbers, non-finite, reversed with ValueError | observed: 0 of 59 cases fail",manual review,true
+c02,complexity,10,10,sort plus one while pass: O(n log n),manual review,true
+c02,non-mutation,5,5,copies pairs into a new list before any work | observed: 0 of 59 cases fail,manual review,true
+c02,readability,10,7,dense inline validation loop and nested while indices take some decoding,manual review,true
+c02,type hints/docstrings,10,7,List/Tuple/Union hints present; docstring brief about raises,manual review,true
+c02,dependency/style restraint,5,4,stdlib only; strict type() identity checks are a slightly unusual convention,manual review,true
+c03,specification/correctness,30,30,stack merge implements the contract's union and ordering | observed: 0 of 59 cases fail,manual review,true
+c03,edge cases,20,20,edge classes pass; pop-and-extend handles nesting and duplicates | observed: 0 of 59 cases fail,manual review,true
+c03,input validation,10,10,"_as_pair centralises shape, endpoint, and range checks with ValueError | observed: 0 of 59 cases fail",manual review,true
+c03,complexity,10,10,sort plus one stack pass: O(n log n),manual review,true
+c03,non-mutation,5,5,sorted() over validated copies leaves input intact | observed: 0 of 59 cases fail,manual review,true
+c03,readability,10,9,stack metaphor and _as_pair helper read cleanly,manual review,true
+c03,type hints/docstrings,10,8,"built-in collection annotations are loose (list, tuple); docstring adequate",manual review,true
+c03,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c04,specification/correctness,30,30,recursive fold produces the contract result for valid input | observed: 0 of 59 cases fail,manual review,true
+c04,edge cases,20,20,edge classes pass including point intervals and touch chains | observed: 0 of 59 cases fail,manual review,true
+c04,input validation,10,10,_validated raises ValueError for all invalid classes before folding | observed: 0 of 59 cases fail,manual review,true
+c04,complexity,10,6,sort is O(n log n) but the fold re-slices the list each step (quadratic overhead) and recursion depth caps usable size,manual review,true
+c04,non-mutation,5,5,folds into a new accumulator; input untouched | observed: 0 of 59 cases fail,manual review,true
+c04,readability,10,8,fold recursion is compact though less familiar to beginners,manual review,true
+c04,type hints/docstrings,10,9,Interval alias and hints are accurate; docstring covers raises,manual review,true
+c04,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c05,specification/correctness,30,30,fixpoint pairwise merging reaches the same union as the contract | observed: 0 of 59 cases fail,manual review,true
+c05,edge cases,20,20,edge classes pass; restart loop finds overlaps hidden by input order | observed: 0 of 59 cases fail,manual review,true
+c05,input validation,10,10,"_clean raises ValueError for shape, endpoint, and range violations | observed: 0 of 59 cases fail",manual review,true
+c05,complexity,10,3,cubic worst case: rescans all pairs after every merge,manual review,true
+c05,non-mutation,5,5,mutates only its own cleaned copy | observed: 0 of 59 cases fail,manual review,true
+c05,readability,10,8,restart-on-merge loop is clear; break-driven control flow is slightly tangled,manual review,true
+c05,type hints/docstrings,10,6,minimal annotations; docstring states cost but not raises,manual review,true
+c05,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c06,specification/correctness,30,30,union-find components collapse to the contract's merged ranges | observed: 0 of 59 cases fail,manual review,true
+c06,edge cases,20,20,edge classes pass; overlap predicate covers touching closed ranges | observed: 0 of 59 cases fail,manual review,true
+c06,input validation,10,10,validation loop raises ValueError before any graph work | observed: 0 of 59 cases fail,manual review,true
+c06,complexity,10,5,quadratic overlap graph plus union-find; strictly worse than sort-based sweeps,manual review,true
+c06,non-mutation,5,5,builds pairs and groups separately from the input | observed: 0 of 59 cases fail,manual review,true
+c06,readability,10,7,nested find/union is compact; None-sentinel group pairs are awkward,manual review,true
+c06,type hints/docstrings,10,7,sparse hints; docstring explains the connectivity idea well,manual review,true
+c06,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c07,specification/correctness,30,30,event sweep with start-before-end tie-break reproduces closed-range union | observed: 0 of 59 cases fail,manual review,true
+c07,edge cases,20,20,edge classes pass; depth counter handles points and duplicates | observed: 0 of 59 cases fail,manual review,true
+c07,input validation,10,10,standard shape/endpoint/range checks raise ValueError first | observed: 0 of 59 cases fail,manual review,true
+c07,complexity,10,10,event sort dominates: O(n log n),manual review,true
+c07,non-mutation,5,5,event list is separate from input | observed: 0 of 59 cases fail,manual review,true
+c07,readability,10,8,tie-break trick needs its comment; surrounding code is linear and clear,manual review,true
+c07,type hints/docstrings,10,7,few annotations; docstring explains the tie-break,manual review,true
+c07,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c08,specification/correctness,30,30,divide-and-conquer combine merges halves to the contract result | observed: 0 of 59 cases fail,manual review,true
+c08,edge cases,20,20,edge classes pass; combine handles touching across halves | observed: 0 of 59 cases fail,manual review,true
+c08,input validation,10,10,_validate raises ValueError; pairs sorted before splitting | observed: 0 of 59 cases fail,manual review,true
+c08,complexity,10,9,merge tree is O(n log n); recursive slicing adds constant factors,manual review,true
+c08,non-mutation,5,5,slices are copies; input untouched | observed: 0 of 59 cases fail,manual review,true
+c08,readability,10,8,combine step is short and well named,manual review,true
+c08,type hints/docstrings,10,9,typed aliases and returns; docstring is clear,manual review,true
+c08,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c09,specification/correctness,30,30,left fold over sorted pairs matches contract semantics | observed: 0 of 59 cases fail,manual review,true
+c09,edge cases,20,20,edge classes pass | observed: 0 of 59 cases fail,manual review,true
+c09,input validation,10,10,per-item checks raise ValueError for every invalid class | observed: 0 of 59 cases fail,manual review,true
+c09,complexity,10,10,sort dominates: O(n log n),manual review,true
+c09,non-mutation,5,5,folds into a fresh accumulator list | observed: 0 of 59 cases fail,manual review,true
+c09,readability,10,8,step() helper is idiomatic and clearly named,manual review,true
+c09,type hints/docstrings,10,9,hints plus Args/Returns/Raises docstring,manual review,true
+c09,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c10,specification/correctness,30,30,map-based validation then sweep produces contract results | observed: 0 of 59 cases fail,manual review,true
+c10,edge cases,20,20,edge classes pass | observed: 0 of 59 cases fail,manual review,true
+c10,input validation,10,10,"is_num lambda rejects bools, NaN/inf; ValueError on shape and range | observed: 0 of 59 cases fail",manual review,true
+c10,complexity,10,10,sort dominates: O(n log n),manual review,true
+c10,non-mutation,5,5,enumerate/map build new tuples; input untouched | observed: 0 of 59 cases fail,manual review,true
+c10,readability,10,6,assigned lambda and dense boolean expression slow readers down,manual review,true
+c10,type hints/docstrings,10,5,return annotation only; docstring describes behaviour,manual review,true
+c10,dependency/style restraint,5,4,stdlib only; assigned lambda is a lint-level style smell,manual review,true
+c11,specification/correctness,30,30,compact sweep is semantically correct on valid input | observed: 0 of 59 cases fail,manual review,true
+c11,edge cases,20,20,edge classes pass | observed: 0 of 59 cases fail,manual review,true
+c11,input validation,10,10,all rules checked but every message collapses to 'bad input' | observed: 0 of 59 cases fail,manual review,true
+c11,complexity,10,10,sort plus one pass: O(n log n),manual review,true
+c11,non-mutation,5,5,builds a new ps list; input untouched | observed: 0 of 59 cases fail,manual review,true
+c11,readability,10,4,"terse names (ps, out, a, b, v) need decoding",manual review,true
+c11,type hints/docstrings,10,1,no type hints and no function docstring,manual review,true
+c11,dependency/style restraint,5,4,stdlib only; terseness trades away convention,manual review,true
+c12,specification/correctness,30,30,normalize-then-merge returns the contract's sorted tuples | observed: 0 of 59 cases fail,manual review,true
+c12,edge cases,20,20,edge classes pass | observed: 0 of 59 cases fail,manual review,true
+c12,input validation,10,10,_endpoint/_normalize raise ValueError for every invalid class | observed: 0 of 59 cases fail,manual review,true
+c12,complexity,10,10,sort dominates: O(n log n),manual review,true
+c12,non-mutation,5,5,_normalize builds new tuples | observed: 0 of 59 cases fail,manual review,true
+c12,readability,10,9,class separation of validation and merging is easy to follow,manual review,true
+c12,type hints/docstrings,10,8,_endpoint is annotated -> float but may return int; the rest is good,manual review,true
+c12,dependency/style restraint,5,5,stdlib only; the class is justified by the structure,manual review,true
+c13,specification/correctness,30,18,"strict < merge splits touching ranges the contract merges (rule 4 violated) | observed failures: pub-touching, reg-unsorted-many, reg-order-matters-a, reg-order-matters-b (+6 more)",manual review,true
+c13,edge cases,20,8,"touching chains, duplicate points, and out-of-order bridges come out wrong | observed failures: pub-touching, reg-unsorted-many, reg-order-matters-a, reg-order-matters-b (+6 more)",manual review,true
+c13,input validation,10,10,"complete and correct ValueError validation; unaffected by the merge defect | observed failures: pub-touching, reg-unsorted-many, reg-order-matters-a, reg-order-matters-b (+6 more)",manual review,true
+c13,complexity,10,10,sort plus sweep: O(n log n),manual review,true
+c13,non-mutation,5,5,"new list of tuples; input untouched | observed failures: pub-touching, reg-unsorted-many, reg-order-matters-a, reg-order-matters-b (+6 more)",manual review,true
+c13,readability,10,8,code is clear; the 'genuinely overlap' comment states the wrong rule,manual review,true
+c13,type hints/docstrings,10,9,good hints; docstring omits the Raises section,manual review,true
+c13,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c14,specification/correctness,30,30,"merge semantics and result shape are correct for every valid input tested | observed failures: pub-no-mutation, reg-no-mutation-order, reg-no-mutation-nested",manual review,true
+c14,edge cases,20,20,"edge class outcomes correct; only mutation cases fail | observed failures: pub-no-mutation, reg-no-mutation-order, reg-no-mutation-nested",manual review,true
+c14,input validation,10,10,"validates fully BEFORE the sort; ValueError behaviour correct | observed failures: pub-no-mutation, reg-no-mutation-order, reg-no-mutation-nested",manual review,true
+c14,complexity,10,10,sort plus sweep: O(n log n),manual review,true
+c14,non-mutation,5,0,"intervals.sort() reorders the caller's list in place (rule 7 violated) | observed failures: pub-no-mutation, reg-no-mutation-order, reg-no-mutation-nested",manual review,true
+c14,readability,10,7,validation-first layout is clear; a comment glosses over the mutation,manual review,true
+c14,type hints/docstrings,10,8,hints present; docstring never mentions the in-place sort,manual review,true
+c14,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c15,specification/correctness,30,24,"merge semantics right but result items are [start, end] lists, not tuples (rule 6) | observed failures: pub-single, pub-overlap, pub-disjoint, pub-reverse-order (+28 more)",manual review,true
+c15,edge cases,20,14,"edge outcomes correct in value terms; wrong shape everywhere | observed failures: pub-single, pub-overlap, pub-disjoint, pub-reverse-order (+28 more)",manual review,true
+c15,input validation,10,10,"complete ValueError validation | observed failures: pub-single, pub-overlap, pub-disjoint, pub-reverse-order (+28 more)",manual review,true
+c15,complexity,10,10,sort plus sweep: O(n log n),manual review,true
+c15,non-mutation,5,5,"result built as new lists; input untouched | observed failures: pub-single, pub-overlap, pub-disjoint, pub-reverse-order (+28 more)",manual review,true
+c15,readability,10,8,clear sweep; list construction is deliberate and visible,manual review,true
+c15,type hints/docstrings,10,7,docstring accurately promises lists - which is exactly the contract violation,manual review,true
+c15,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c16,specification/correctness,30,30,"happy-path merge is correct whenever input happens to be valid | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c16,edge cases,20,8,"invalid edge classes (malformed, reversed, non-finite) are accepted or crash | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c16,input validation,10,0,"no validation at all; the contract's ValueError is never raised | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c16,complexity,10,10,sort plus sweep: O(n log n),manual review,true
+c16,non-mutation,5,5,"list comprehension copies pairs; input untouched | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c16,readability,10,7,"short and readable; docstring admits 'garbage in, garbage out'",manual review,true
+c16,type hints/docstrings,10,6,partial hints; docstring documents the missing validation,manual review,true
+c16,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c17,specification/correctness,30,24,"integer inputs meet the contract; valid float inputs are wrongly rejected | observed failures: pub-floats, reg-neg-floats, reg-mixed-int-float, reg-float-touch (+1 more)",manual review,true
+c17,edge cases,20,12,"float and mixed endpoint classes fail; integer edge classes are fine | observed failures: pub-floats, reg-neg-floats, reg-mixed-int-float, reg-float-touch (+1 more)",manual review,true
+c17,input validation,10,5,"rejects bools/NaN/inf correctly but also rejects valid floats (over-strict) | observed failures: pub-floats, reg-neg-floats, reg-mixed-int-float, reg-float-touch (+1 more)",manual review,true
+c17,complexity,10,10,sort plus sweep: O(n log n),manual review,true
+c17,non-mutation,5,5,"new tuples; input untouched | observed failures: pub-floats, reg-neg-floats, reg-mixed-int-float, reg-float-touch (+1 more)",manual review,true
+c17,readability,10,8,_check helper and docstring read well,manual review,true
+c17,type hints/docstrings,10,9,annotations are accurate for its (wrong) integer-only contract,manual review,true
+c17,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c18,specification/correctness,30,16,"no sort step: any unsorted input merges incorrectly (rule 5) | observed failures: pub-reverse-order, pub-no-mutation, reg-unsorted-many, reg-order-matters-a (+2 more)",manual review,true
+c18,edge cases,20,10,"reverse-order and hidden-bridge cases wrong; already-sorted edges fine | observed failures: pub-reverse-order, pub-no-mutation, reg-unsorted-many, reg-order-matters-a (+2 more)",manual review,true
+c18,input validation,10,10,"complete ValueError validation | observed failures: pub-reverse-order, pub-no-mutation, reg-unsorted-many, reg-order-matters-a (+2 more)",manual review,true
+c18,complexity,10,5,linear only because the contractually required sort is missing,manual review,true
+c18,non-mutation,5,5,"builds new pairs; input untouched (mutation-labeled cases fail on value instead) | observed failures: pub-reverse-order, pub-no-mutation, reg-unsorted-many, reg-order-matters-a (+2 more)",manual review,true
+c18,readability,10,8,single pass is clear; the sorted-input precondition is easy to miss,manual review,true
+c18,type hints/docstrings,10,8,partial hints; docstring states the assumption,manual review,true
+c18,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c19,specification/correctness,30,18,"sort-by-end sweep merges in the wrong order for some inputs (rule 5) | observed failures: reg-order-matters-a, reg-nested-deep",manual review,true
+c19,edge cases,20,10,"out-of-order nesting and bridges wrong; other edge classes fine | observed failures: reg-order-matters-a, reg-nested-deep",manual review,true
+c19,input validation,10,10,"complete ValueError validation | observed failures: reg-order-matters-a, reg-nested-deep",manual review,true
+c19,complexity,10,10,still O(n log n); the wrong sort key is not a speed trade-off,manual review,true
+c19,non-mutation,5,5,"new tuples; input untouched | observed failures: reg-order-matters-a, reg-nested-deep",manual review,true
+c19,readability,10,8,tidy code; the sort-key comment states the wrong invariant,manual review,true
+c19,type hints/docstrings,10,8,good hints; docstring accurately describes the (wrong) behaviour,manual review,true
+c19,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
+c20,specification/correctness,30,30,"merge semantics and result shape are correct on valid input | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c20,edge cases,20,12,"valid-input edge classes fine; invalid ones raise an exception but not ValueError | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c20,input validation,10,2,"every rule is checked, but signalling uses TypeError instead of ValueError | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c20,complexity,10,10,sort plus sweep: O(n log n),manual review,true
+c20,non-mutation,5,5,"new tuples; input untouched | observed failures: pub-invalid-reversed, pub-invalid-nan, reg-malformed-short, reg-malformed-long (+22 more)",manual review,true
+c20,readability,10,8,mirrors the correct structure; the exception choice is the only tell,manual review,true
+c20,type hints/docstrings,10,7,docstring honestly documents TypeError - which is the contract violation,manual review,true
+c20,dependency/style restraint,5,5,stdlib only; conventional style,manual review,true
