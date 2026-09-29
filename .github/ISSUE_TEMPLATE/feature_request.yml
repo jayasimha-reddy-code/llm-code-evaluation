@@ -1,0 +1,29 @@
+name: Feature Request
+description: Propose an idea, new test cases, or evaluation metric
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for suggesting an enhancement to the benchmark suite.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Motivation
+      description: What challenge or gap in the evaluation suite does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution or new capability you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative implementations or approaches considered.
+    validations:
+      required: false
