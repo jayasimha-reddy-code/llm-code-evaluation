@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-code-evaluation"
+version = "0.1.0"
+description = "Evaluation benchmark harness and test suites for candidate merge_intervals implementations."
+readme = "README.md"
+authors = [
+  { name = "jayasimha-reddy-code", email = "thavvar09@gmail.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "pytest>=7.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["candidates*", "scripts*", "tests*"]
