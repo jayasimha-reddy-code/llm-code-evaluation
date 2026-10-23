@@ -1,0 +1,5622 @@
+{
+  "meta": {
+    "generated_by": "scripts/evaluate.py",
+    "generated_at": "2026-10-17T14:47:47+00:00",
+    "corpus": "single-session pilot corpus (not a cross-model benchmark)",
+    "public_cases": 14,
+    "regression_cases": 45,
+    "note": "Executable pass/fail results and qualitative rubric scores are reported separately and never combined."
+  },
+  "candidates": [
+    {
+      "candidate_id": "c01",
+      "filename": "candidates/c01_sort_sweep.py",
+      "approach": "sort then linear sweep with validation helpers",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 9.0,
+          "typing_docs_10": 10.0,
+          "restraint_5": 5.0
+        },
+        "total": 99.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "reference-quality sweep; minor verbosity in error messages"
+      }
+    },
+    {
+      "candidate_id": "c02",
+      "filename": "candidates/c02_while_sweep.py",
+      "approach": "inline validation and while-index sweep after sorting",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 7.0,
+          "typing_docs_10": 7.0,
+          "restraint_5": 4.0
+        },
+        "total": 93.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "solid; dense inline validation loop; strict type() checks are unusual"
+      }
+    },
+    {
+      "candidate_id": "c03",
+      "filename": "candidates/c03_stack_merge.py",
+      "approach": "stack merge: pop and push extended ranges",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 9.0,
+          "typing_docs_10": 8.0,
+          "restraint_5": 5.0
+        },
+        "total": 97.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "clean stack idea with a tidy _as_pair helper"
+      }
+    },
+    {
+      "candidate_id": "c04",
+      "filename": "candidates/c04_recursive_fold.py",
+      "approach": "recursive fold over the sorted pair list",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 6.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 9.0,
+          "restraint_5": 5.0
+        },
+        "total": 93.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "neat fold but list slicing makes it quadratic and recursion caps size"
+      }
+    },
+    {
+      "candidate_id": "c05",
+      "filename": "candidates/c05_fixpoint_merge.py",
+      "approach": "fixpoint pairwise merging until no pair overlaps",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 3.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 6.0,
+          "restraint_5": 5.0
+        },
+        "total": 87.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "correct but cubic pairwise merging; fine for tiny inputs only"
+      }
+    },
+    {
+      "candidate_id": "c06",
+      "filename": "candidates/c06_union_find.py",
+      "approach": "union-find connected components over the overlap graph",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 5.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 7.0,
+          "typing_docs_10": 7.0,
+          "restraint_5": 5.0
+        },
+        "total": 89.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "clear union-find idea; quadratic overlap graph and sentinel lists"
+      }
+    },
+    {
+      "candidate_id": "c07",
+      "filename": "candidates/c07_event_sweep.py",
+      "approach": "event-point sweep with a coverage-depth counter",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 7.0,
+          "restraint_5": 5.0
+        },
+        "total": 95.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "event sweep is elegant; the tie-break comment earns its keep"
+      }
+    },
+    {
+      "candidate_id": "c08",
+      "filename": "candidates/c08_divide_conquer.py",
+      "approach": "divide and conquer with a sorted-list combine step",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 9.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 9.0,
+          "restraint_5": 5.0
+        },
+        "total": 96.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "careful combine step; recursive slicing adds overhead"
+      }
+    },
+    {
+      "candidate_id": "c09",
+      "filename": "candidates/c09_reduce_fold.py",
+      "approach": "functools.reduce fold over sorted pairs",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 9.0,
+          "restraint_5": 5.0
+        },
+        "total": 97.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "reduce fold reads well; consistent validation"
+      }
+    },
+    {
+      "candidate_id": "c10",
+      "filename": "candidates/c10_functional.py",
+      "approach": "functional style with map and itemgetter",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 6.0,
+          "typing_docs_10": 5.0,
+          "restraint_5": 4.0
+        },
+        "total": 90.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "works but assigned lambda and dense boolean expression hurt"
+      }
+    },
+    {
+      "candidate_id": "c11",
+      "filename": "candidates/c11_compact.py",
+      "approach": "compact single-pass sweep with minimal comments",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 4.0,
+          "typing_docs_10": 1.0,
+          "restraint_5": 4.0
+        },
+        "total": 84.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "correct and fast to read for experts; names like ps and out are cryptic"
+      }
+    },
+    {
+      "candidate_id": "c12",
+      "filename": "candidates/c12_class_based.py",
+      "approach": "small class owning validation and merging",
+      "intended_status": "intended-correct",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "none",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 45,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 9.0,
+          "typing_docs_10": 8.0,
+          "restraint_5": 5.0
+        },
+        "total": 97.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "nice separation of concerns; endpoint hint says float but returns int"
+      }
+    },
+    {
+      "candidate_id": "c13",
+      "filename": "candidates/c13_strict_overlap.py",
+      "approach": "sort and sweep merging only strict overlaps",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "merges only when next_start < current_end so touching ranges stay split",
+      "executable": {
+        "public": {
+          "passed": 13,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 3)], want [(1, 3)]"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 36,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 5), (8, 9)], want [(1, 5), (8, 9)]"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 5)], want [(1, 5)]"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 4), (4, 5)], want [(1, 5)]"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 3), (3, 4)], want [(1, 4)]"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "fail",
+              "detail": "got [(1, 1), (1, 1)], want [(1, 1)]"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "fail",
+              "detail": "got [(1, 1), (1, 2)], want [(1, 2)]"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "fail",
+              "detail": "got [(1, 2.5), (2.5, 4)], want [(1, 4)]"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "fail",
+              "detail": "got [(0, 0.5), (0.5, 1)], want [(0, 1)]"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 3)], want [(1, 3)]"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 18.0,
+          "edge_cases_20": 8.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 9.0,
+          "restraint_5": 5.0
+        },
+        "total": 73.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: touching ranges stay split (strict < merge test)"
+      }
+    },
+    {
+      "candidate_id": "c14",
+      "filename": "candidates/c14_inplace_sort.py",
+      "approach": "validation then in-place sort of the caller list",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "sorts the input list in place which mutates the caller's data",
+      "executable": {
+        "public": {
+          "passed": 13,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "fail",
+              "detail": "input was mutated"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 43,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "fail",
+              "detail": "input was mutated"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "fail",
+              "detail": "input was mutated"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 20.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 0.0,
+          "readability_10": 7.0,
+          "typing_docs_10": 8.0,
+          "restraint_5": 5.0
+        },
+        "total": 90.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: in-place sort mutates the caller's list"
+      }
+    },
+    {
+      "candidate_id": "c15",
+      "filename": "candidates/c15_lists_not_tuples.py",
+      "approach": "sweep building result items as lists",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "returns a list of [start end] lists instead of tuples",
+      "executable": {
+        "public": {
+          "passed": 3,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[2, 5]]"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 6]]"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 2], [4, 5]]"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 2], [5, 6]]"
+            },
+            {
+              "id": "pub-nested",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 10]]"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 2]]"
+            },
+            {
+              "id": "pub-touching",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 3]]"
+            },
+            {
+              "id": "pub-negative",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[-5, 0]]"
+            },
+            {
+              "id": "pub-floats",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1.5, 3.0]]"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 2], [3, 4]]"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 2], [3, 4]]"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 24,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 5], [8, 9]]"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 5]]"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 5]]"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 5]]"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 5]]"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 4]]"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 4]]"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 10]]"
+            },
+            {
+              "id": "reg-point",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 1]]"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 1]]"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 1], [2, 2]]"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 2]]"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 5]]"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[-2.5, 0]]"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 4]]"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[0, 1]]"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[0, 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000..."
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[-3, -2], [0, 0.5], [1, 3]]"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[5, 5]]"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 2], [3, 4]]"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "fail",
+              "detail": "result must be a list of 2-tuples, got [[1, 3]]"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 24.0,
+          "edge_cases_20": 14.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 7.0,
+          "restraint_5": 5.0
+        },
+        "total": 83.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: result items are lists not tuples"
+      }
+    },
+    {
+      "candidate_id": "c16",
+      "filename": "candidates/c16_no_validation.py",
+      "approach": "happy-path sweep that trusts the caller",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "no input validation at all so malformed input is accepted or crashes",
+      "executable": {
+        "public": {
+          "passed": 12,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(3, 2)]"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(nan, 1)]"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 21,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "fail",
+              "detail": "raised IndexError: 'list index out of range'"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(1, 2)]"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "fail",
+              "detail": "raised IndexError: 'list index out of range'"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "fail",
+              "detail": "raised TypeError: \"'int' object is not subscriptable\""
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "fail",
+              "detail": "expected ValueError, got result [('a', 'b')]"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(1, [2])]"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(5, 6)]"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(None, 2)]"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "fail",
+              "detail": "expected ValueError, got result [('a', 2)]"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "fail",
+              "detail": "raised TypeError: \"'NoneType' object is not iterable\""
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "fail",
+              "detail": "raised TypeError: \"'int' object is not iterable\""
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(1, 2), (3, 4)]"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(2.5, 2.0)]"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(1, 2), (5, 4)]"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(nan, 1)]"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(0, nan)]"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(0, inf)]"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(inf, inf)]"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(-1, -inf)]"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(-inf, 2)]"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(True, 2)]"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(1, False)]"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(False, False)]"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "fail",
+              "detail": "expected ValueError, got result [(3, 4), (6, 5)]"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 8.0,
+          "validation_10": 0.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 7.0,
+          "typing_docs_10": 6.0,
+          "restraint_5": 5.0
+        },
+        "total": 71.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: no validation; trusts the caller completely"
+      }
+    },
+    {
+      "candidate_id": "c17",
+      "filename": "candidates/c17_ints_only.py",
+      "approach": "strict validation but integer endpoints only",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "rejects float endpoints as invalid (over-strict validation)",
+      "executable": {
+        "public": {
+          "passed": 13,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "fail",
+              "detail": "unexpected ValueError: 'endpoint (0, 0) must be an int'"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 41,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "fail",
+              "detail": "unexpected ValueError: 'endpoint (0, 0) must be an int'"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "fail",
+              "detail": "unexpected ValueError: 'endpoint (0, 1) must be an int'"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "fail",
+              "detail": "unexpected ValueError: 'endpoint (0, 1) must be an int'"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "fail",
+              "detail": "unexpected ValueError: 'endpoint (1, 1) must be an int'"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 24.0,
+          "edge_cases_20": 12.0,
+          "validation_10": 5.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 9.0,
+          "restraint_5": 5.0
+        },
+        "total": 78.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: floats rejected; otherwise careful"
+      }
+    },
+    {
+      "candidate_id": "c18",
+      "filename": "candidates/c18_assumes_sorted.py",
+      "approach": "single left-to-right pass in input order",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "assumes the input is already sorted and never sorts",
+      "executable": {
+        "public": {
+          "passed": 12,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "fail",
+              "detail": "got [(1, 6)], want [(1, 2), (5, 6)]"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "fail",
+              "detail": "got [(1, 4)], want [(1, 2), (3, 4)]"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 41,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "fail",
+              "detail": "got [(1, 9)], want [(1, 5), (8, 9)]"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 5)], want [(1, 5)]"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 5)], want [(1, 5)]"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "fail",
+              "detail": "got [(1, 4)], want [(1, 2), (3, 4)]"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 16.0,
+          "edge_cases_20": 10.0,
+          "validation_10": 10.0,
+          "complexity_10": 5.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 8.0,
+          "restraint_5": 5.0
+        },
+        "total": 67.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: never sorts; wrong for unordered input"
+      }
+    },
+    {
+      "candidate_id": "c19",
+      "filename": "candidates/c19_sort_by_end.py",
+      "approach": "validation then sweep after sorting by interval end",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "sorts by end only so some inputs merge in the wrong order",
+      "executable": {
+        "public": {
+          "passed": 14,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "pass"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 43,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "fail",
+              "detail": "got [(1, 2), (2, 5)], want [(1, 5)]"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "fail",
+              "detail": "got [(2, 3), (1, 10)], want [(1, 10)]"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "pass"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 18.0,
+          "edge_cases_20": 10.0,
+          "validation_10": 10.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 8.0,
+          "restraint_5": 5.0
+        },
+        "total": 74.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: sorts by end; wrong merge order for some inputs"
+      }
+    },
+    {
+      "candidate_id": "c20",
+      "filename": "candidates/c20_wrong_exception.py",
+      "approach": "full checks signalling problems with TypeError",
+      "intended_status": "seeded-defect",
+      "provenance": "single-session pilot corpus",
+      "collected_on": "2026-10-17",
+      "seeded_defect": "raises TypeError instead of ValueError for bad input",
+      "executable": {
+        "public": {
+          "passed": 12,
+          "total": 14,
+          "checks": [
+            {
+              "id": "pub-empty",
+              "status": "pass"
+            },
+            {
+              "id": "pub-single",
+              "status": "pass"
+            },
+            {
+              "id": "pub-overlap",
+              "status": "pass"
+            },
+            {
+              "id": "pub-disjoint",
+              "status": "pass"
+            },
+            {
+              "id": "pub-reverse-order",
+              "status": "pass"
+            },
+            {
+              "id": "pub-nested",
+              "status": "pass"
+            },
+            {
+              "id": "pub-duplicates",
+              "status": "pass"
+            },
+            {
+              "id": "pub-touching",
+              "status": "pass"
+            },
+            {
+              "id": "pub-negative",
+              "status": "pass"
+            },
+            {
+              "id": "pub-floats",
+              "status": "pass"
+            },
+            {
+              "id": "pub-tuple-intervals",
+              "status": "pass"
+            },
+            {
+              "id": "pub-no-mutation",
+              "status": "pass"
+            },
+            {
+              "id": "pub-invalid-reversed",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 0 starts after it ends'"
+            },
+            {
+              "id": "pub-invalid-nan",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be finite'"
+            }
+          ]
+        },
+        "regression": {
+          "passed": 21,
+          "total": 45,
+          "checks": [
+            {
+              "id": "reg-unsorted-many",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-a",
+              "status": "pass"
+            },
+            {
+              "id": "reg-order-matters-b",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-start",
+              "status": "pass"
+            },
+            {
+              "id": "reg-same-end",
+              "status": "pass"
+            },
+            {
+              "id": "reg-identical-and-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-touch-chain",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nested-deep",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-dup",
+              "status": "pass"
+            },
+            {
+              "id": "reg-points-separate",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-point-inside",
+              "status": "pass"
+            },
+            {
+              "id": "reg-neg-floats",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-int-float",
+              "status": "pass"
+            },
+            {
+              "id": "reg-float-touch",
+              "status": "pass"
+            },
+            {
+              "id": "reg-large-int",
+              "status": "pass"
+            },
+            {
+              "id": "reg-mixed-set",
+              "status": "pass"
+            },
+            {
+              "id": "reg-malformed-short",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 1 must be a two-item list or tuple'"
+            },
+            {
+              "id": "reg-malformed-long",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 0 must be a two-item list or tuple'"
+            },
+            {
+              "id": "reg-malformed-empty-item",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 0 must be a two-item list or tuple'"
+            },
+            {
+              "id": "reg-malformed-scalar-item",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 1 must be a two-item list or tuple'"
+            },
+            {
+              "id": "reg-malformed-string-pair",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 0 must be a two-item list or tuple'"
+            },
+            {
+              "id": "reg-malformed-nested-endpoint",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 1) must be a finite int or float'"
+            },
+            {
+              "id": "reg-malformed-range-item",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 0 must be a two-item list or tuple'"
+            },
+            {
+              "id": "reg-endpoint-none",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be a finite int or float'"
+            },
+            {
+              "id": "reg-endpoint-str",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be a finite int or float'"
+            },
+            {
+              "id": "reg-outer-not-list-none",
+              "status": "fail",
+              "detail": "raised TypeError: 'intervals must be a list of two-item pairs'"
+            },
+            {
+              "id": "reg-outer-not-list-int",
+              "status": "fail",
+              "detail": "raised TypeError: 'intervals must be a list of two-item pairs'"
+            },
+            {
+              "id": "reg-outer-not-list-tuple",
+              "status": "fail",
+              "detail": "raised TypeError: 'intervals must be a list of two-item pairs'"
+            },
+            {
+              "id": "reg-reversed-range",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 0 starts after it ends'"
+            },
+            {
+              "id": "reg-reversed-among-valid",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 1 starts after it ends'"
+            },
+            {
+              "id": "reg-equal-endpoints-valid",
+              "status": "pass"
+            },
+            {
+              "id": "reg-nan-start",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be finite'"
+            },
+            {
+              "id": "reg-nan-end",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 1) must be finite'"
+            },
+            {
+              "id": "reg-inf-end",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 1) must be finite'"
+            },
+            {
+              "id": "reg-inf-start",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be finite'"
+            },
+            {
+              "id": "reg-neg-inf-end",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 1) must be finite'"
+            },
+            {
+              "id": "reg-neg-inf-start",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be finite'"
+            },
+            {
+              "id": "reg-bool-start",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be a finite int or float'"
+            },
+            {
+              "id": "reg-bool-end",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 1) must be a finite int or float'"
+            },
+            {
+              "id": "reg-bool-point",
+              "status": "fail",
+              "detail": "raised TypeError: 'endpoint (0, 0) must be a finite int or float'"
+            },
+            {
+              "id": "reg-no-mutation-order",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-nested",
+              "status": "pass"
+            },
+            {
+              "id": "reg-no-mutation-on-error",
+              "status": "fail",
+              "detail": "raised TypeError: 'interval 1 starts after it ends'"
+            }
+          ]
+        }
+      },
+      "rubric": {
+        "criteria": {
+          "correctness_30": 30.0,
+          "edge_cases_20": 12.0,
+          "validation_10": 2.0,
+          "complexity_10": 10.0,
+          "non_mutation_5": 5.0,
+          "readability_10": 8.0,
+          "typing_docs_10": 7.0,
+          "restraint_5": 5.0
+        },
+        "total": 79.0,
+        "scorer": "AI-assisted preliminary review (model-generated)",
+        "scored_on": "2026-10-17",
+        "notes": "seeded defect: TypeError instead of ValueError; checks otherwise thorough"
+      }
+    }
+  ]
+}
